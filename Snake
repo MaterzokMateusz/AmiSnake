@@ -1,0 +1,62 @@
+Dim SEGMENTS(20,1)
+SEGMENTS(0,0)=10
+SEGMENTS(0,1)=10
+FRUITX=0
+FRUITY=0
+SEGNUMBER=0
+EATEN=1
+
+Procedure DFRUIT
+
+   Shared FRUITX,FRUITY
+
+   Pen 4
+   Locate FRUITY,FRUITX
+   Print "O"
+
+
+End Proc
+
+Procedure DFRUITPOS
+
+   Shared FRUITX,FRUITY,EATEN
+
+   If EATEN=1
+
+      FRUITX=Rnd(10)+1
+      FRUITY=Rnd(10)+1
+      EATEN=0
+
+   End If 
+
+End Proc
+
+Procedure DSNAKE[SEG]
+
+Shared SEGMENTS()
+
+For X=0 To SEG
+   Locate SEGMENTS(X,1),SEGMENTS(X,0)
+   Pen 5
+   Print "O"
+Next X
+
+End Proc
+
+DSNAKE[SEGNUMBER]
+DFRUITPOS
+DFRUIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
